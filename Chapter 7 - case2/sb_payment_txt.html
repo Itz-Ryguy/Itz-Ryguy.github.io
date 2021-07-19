@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <!--
+      New Perspectives on HTML5 and CSS3, 8th Edition
+      Tutorial 7
+      Case Problem 2
+
+      Spice Bowl Payment Form
+      Author: Ryan Montambeault
+      Date: July 16, 2021
+
+      Filename:   sb_payment.html
+
+   -->
+   
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1" />
+   <title>Spice Bowl Payment Form</title>
+   <link href="css/sb_reset.css" rel="stylesheet" />
+   <link href="css/sb_styles.css" rel="stylesheet" />
+   <link href="css/sb_forms.css" rel="stylesheet" />
+   <link href="css/sb_validate_txt.css" rel="stylesheet" />
+   <script src="sb_script.js"></script>
+</head>
+
+<body>
+   <header>
+      <img src="sb_logo.png" alt="The Spice Bowl" />
+      <form id="login" method="post" action="https://www.example.com/sb/login/payment">
+         <textarea id="userbox" field-name="username" placeholder="username"></textarea>
+         <textarea id="pwd" field-name="password" placeholder="password"></textarea>
+      </form>
+
+      <nav> <a id="navicon" href="#"><img src="sb_navicon.png" alt="" /></a>
+         <ul>
+            <li><a href="#">Spices</a></li>
+            <li><a href="#">Recipes</a></li>
+            <li><a href="#">My Cart</a></li>
+            <li><a href="#">My Account</a></li>
+            <li><a href="#">Contact Us</a></li>
+         </ul>
+      </nav>
+   </header>
+   
+   <section>
+      <h1>Payment Form</h1>
+      <form id="payment" method="post" action="https://www.example.com/sb/payment">
+         <fieldset id="billing">
+            <legend>Billing Information (required)</legend>
+            <label id="firstBox">First Name</label>
+            <input type="text" id="firstBox" name="fName" required="required">
+
+            <label id="lastBox">Last Name</label>
+            <input type="text" id="lastBox" name="lName" required="required">
+
+            <label id="streetBox">Street Address</label>
+            <input type="text" id="streetBox" name="street" required="required">
+
+            <label id="streetBox2">Street Address (2)</label>
+            <input type="text" id="streetBox2" name="street2">
+
+            <label id="cityBox">City</label>
+            <input type="text" id="cityBox" name="city" required="required">
+
+            <label id="provinceBox">Province</label>
+            <input type="text" id="provinceBox" name="province" required="required">
+
+            <label id="zipBox">ZIP/Postal Code</label>
+            <input type="text" id="zipBox" name="zip" pattern="^\d{5}(-\d{4})?$">
+
+            <label id="countryBox">Country</label>
+            <input type="text" id="countryBox" name="country" required="required" value="Canada">
+
+            <label id="phoneBox">Phone</label>
+            <input type="tel" id="phoneBox" name="phone" required="required" pattern="^\d{10}$|^(\(\d{3}\)\s*)?\d{3}[\s-]?\d{4}$">
+
+            <datalist id="provinceList">NL, PE, NS, NB, QC, ON, MB, SK, AB, BC, YT, NT, NU</datalist>
+         </fieldset>
+
+         <fieldset id="creditCard">
+            <legend>Credi Card (required)</legend>
+            <fieldset required="required">
+               <label class="cardLabel">
+                  <input type="radio" name="cCard"><img src="sb_amex.png">
+               </label>
+               
+               <label class="cardLabel">
+                  <input type="radio" name="cCard"><img src="sb_discover.png">
+               </label>
+
+               <label class="cardLabel">
+                  <input type="radio" name="cCard"><img src="sb_master.png">
+               </label>
+
+               <label class="cardLabel">
+                  <input type="radio" name="cCard"><img src="sb_visa.png">
+               </label>
+            </fieldset>
+
+            <label for="creditNumber">Credit Card Number</label>
+            <input name="creditNumber" id="cardBox" required="required" pattern="^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})$">
+
+            <label for="monthList">Expiration Date</label>
+            <select id="monthList" required="required">
+               <option value="--Month--">--Month--</option>
+               <option value="January (01)">January</option>
+               <option value="Febuary (02)">Febuary</option>
+               <option value="March (03)">March</option>
+               <option value="April (04)">April</option>
+               <option value="May (05)">May</option>
+               <option value="June (06)">June</option>
+               <option value="July (07)">July</option>
+               <option value="August (08)">August</option>
+               <option value="September (09)">September</option>
+               <option value="October (10)">October</option>
+               <option value="November (11)">November</option>
+               <option value="December (12)">December</option>
+            </select>
+            <select id="yearList" required="required">
+               <option value="--Year--">--Year--</option>
+               <option value="2020">2020</option>
+               <option value="2021">2021</option>
+               <option value="2022">2022</option>
+               <option value="2023">2023</option>
+               <option value="2024">2024</option>
+            </select>
+         
+         <label for="cscBox">CSC</label>
+            <input id="cscBox" pattern="^\d{3}$" maxlength="3" placeholder="nnn">
+         </fieldset>
+
+         <button type="submit"><img src="sb_button.png"></button>
+
+      </form>
+      
+      <aside>
+         <h1>Menu Ideas</h1>
+         <h2>Salt-Roasted Pecans</h2>
+         <ul>
+            <li>2 cups pecans</li>
+            <li>3 Tbs. butter, melted</li>
+            <li>1 1/4 tsp. fine sea salt</li>
+         </ul>
+         <p>Preheat oven to 325&deg;. Toss pecans and butter together; 
+            add salt and toss again.  Spread in a single layer on a baking 
+            sheet.  Bake about 15 minutes.  Cook on baking sheet.
+         </p>
+
+         <h2>Dried Beef Sticks</h2>
+         <ul>
+            <li>5 lbs. ground chuck</li>
+            <li>5 Tbs. quick salt</li>
+            <li>3 tsp. mustard seed</li>
+            <li>2 tsp. granulated garlic</li>
+            <li>2 tsp. cracked pepper</li>
+            <li>1 Tbs. hickory smoked salt</li>
+            <li>1 Tbs. liquid smoke</li>
+         </ul>
+         <p>Mix beef and season.  Place in a large covered container 
+            for three days.  
+            On third day, shape beef into sticks, and bake at 150&deg; for 
+            8 hours (turn half-way through).
+         </p>
+      </aside>
+      
+   </section>
+
+   <footer>
+      <nav>
+         <ul>
+            <li class="newgroup"><a href="#">Home</a></li>
+            <li><a href="#">Keyword Search</a></li>
+      
+            <li class="newgroup"><a href="#">Spices</a></li>
+            <li><a href="#">Seasonings</a></li>
+            <li><a href="#">Blends</a></li>
+            <li><a href="#">Salts &amp; Peppers</a></li>
+            <li><a href="#">Popcorn Seasonings</a></li>
+            <li><a href="#">Dip Mixes</a></li>
+            <li><a href="#">Bulk Spices</a></li>
+            <li><a href="#">Extracts</a></li>
+            <li><a href="#">Flavorings</a></li>
+      
+            <li class="newgroup"><a href="#">Spice Jars</a></li>
+            <li><a href="#">Spice Jar Labels</a></li>
+            <li><a href="#">Spice Sets</a></li>
+            <li><a href="#">Mortar &amp; Pestles</a></li>
+      
+            <li class="newgroup"><a href="#">Cookbooks</a></li>
+            <li><a href="#">Online Recipes</a></li>
+            <li><a href="#">Forums</a></li>
+      
+            <li class="newgroup"><a href="#">My Account</a></li>
+            <li><a href="#">Checkout</a></li>
+            <li><a href="#">Order History</a></li>
+            <li><a href="#">Shipping Info</a></li>
+      
+            <li class="newgroup"><a href="#">Tech Support</a></li>
+            <li><a href="#">Hours</a></li>
+            <li><a href="#">Contact Us</a></li>
+         </ul>
+      </nav>
+   </footer>         
+</body>
+</html>
