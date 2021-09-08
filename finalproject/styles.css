@@ -106,3 +106,10 @@ header nav ul li a:hover{
     text-align: center;
     margin-left: 15%;
 }
+
+.purchasebutton {
+    margin-left: 45%;
+    width: 200px;
+    height: 50px;
+    font-size: 30px;
+}
